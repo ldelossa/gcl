@@ -13,18 +13,16 @@ options:
         - refactor
   commit_groups:
     title_maps:
-      feat: Features
+      feature: Features
       fix: Bug Fixes
       perf: Performance Improvements
       refactor: Code Refactoring
   header:
-    pattern: |
-      ^(.*:)\s*(.*)\n{2}((?s:.*))\n{2}Change-Type:\s*(.*)\n
+    pattern: '^(.*) (.*):\s*(.*)$'
     pattern_maps:
+      - Type
       - Scope
       - Subject
-      - Body
-      - Type
   notes:
     keywords:
       - BREAKING CHANGE
