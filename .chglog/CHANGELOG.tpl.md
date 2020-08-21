@@ -6,10 +6,15 @@
 {{ range .Unreleased.CommitGroups -}}
 ### {{ .Title }}
 {{ range .Commits -}}
-- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ .Subject }}
+- [{{.Hash.Short}}]({{ $.Info.RepositoryURL  }}/commit/{{ .Hash.Long }}): {{ .Subject }}
+{{ if .Refs -}}
+{{ range .Refs -}}
+  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }})
+{{ end -}}
+{{ end -}}
+{{ end -}}
+{{ end -}}
 {{ end }}
-{{ end -}}
-{{ end -}}
 {{ end -}}
 
 {{ range .Versions }}
@@ -19,12 +24,9 @@
 ### {{ .Title }}
 {{ range .Commits -}}
 - [{{.Hash.Short}}]({{ $.Info.RepositoryURL  }}/commit/{{ .Hash.Long }}): {{ .Subject }}
-{{ if .Refs -}}
-{{ range .Refs }}
-  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }})
-{{ end }}
-{{ end }}
-{{ end }}
+{{ if .Refs }}{{ range .Refs }}  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }}){{ end }}
+{{ end -}}
+{{ end -}}
 {{ end -}}
 
 {{- if .RevertCommits -}}
