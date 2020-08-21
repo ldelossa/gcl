@@ -18,7 +18,12 @@
 {{ range .CommitGroups -}}
 ### {{ .Title }}
 {{ range .Commits -}}
-- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ .Subject }} {{ . }}
+- [{{.Hash.Short}}]({{ $.Info.RepositoryURL  }}/commit/{{ .Hash.Long }}): {{ .Subject }}
+{{ if .Refs -}}
+{{ range .Refs }}
+  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }})
+{{ end }}
+{{ end }}
 {{ end }}
 {{ end -}}
 
