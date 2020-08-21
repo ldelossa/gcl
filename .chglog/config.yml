@@ -5,24 +5,21 @@ info:
   repository_url: https://github.com/ldelossa/gcl
 options:
   commits:
-    filters:
-      Type:
-        - feature
-        - fix
-        - perf
-        - refactor
+    sort_by: Scope
   commit_groups:
-    title_maps:
-      feature: Features
-      fix: Bug Fixes
-      perf: Performance Improvements
-      refactor: Code Refactoring
+    group_by: Scope
   header:
-    pattern: '^(.*) (.*):\s*(.*)$'
+    pattern: '^(.*):\s*(.*)$'
     pattern_maps:
-      - Type
       - Scope
       - Subject
+  issues:
+    prefix: "#"
+  refs:
+    actions:
+      - Closes
+      - Fixes
   notes:
     keywords:
       - BREAKING CHANGE
+      - Note
