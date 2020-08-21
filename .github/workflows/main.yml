@@ -1,0 +1,17 @@
+---
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  commit-check:
+    name: commit check
+    runs-on: ubuntu-latest
+    steps:
+      - name: commit check
+        uses: gsactions/commit-message-checker@v1
+        with:
+          pattern: |
+            ^(.*):\s*(.*)\n{2}([\s\S]*)\n{2}
+          flags: 'gm'
+          error: 'The commit structor must be <scope>: <subject>\n\n<body>\n\n'
