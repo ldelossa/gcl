@@ -2,6 +2,19 @@
 ## [Unreleased]
 
 
+<a name="v0.0.4"></a>
+## [v0.0.4] - 2020-08-21
+### Changelog
+- [bd5872d](https://github.com/ldelossa/gcl/commit/bd5872d3acc4c68a988058a4e3e9cd9034dcc902): linkable sha and issues
+
+
+### Cicd
+- [50652d2](https://github.com/ldelossa/gcl/commit/50652d2e971a489e706a990cc742d343d8456862): adds git commit template
+
+- [ca3642b](https://github.com/ldelossa/gcl/commit/ca3642b8d9ee9f7408e2f07c8bea6517ab9a0692): add github commit check
+
+
+
 <a name="v0.0.3"></a>
 ## [v0.0.3] - 2020-08-21
 ### Changelog
@@ -36,6 +49,7 @@
 
 
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.3...HEAD
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.4...HEAD
+[v0.0.4]: https://github.com/ldelossa/gcl/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/ldelossa/gcl/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/ldelossa/gcl/compare/v0.0.1...v0.0.2
