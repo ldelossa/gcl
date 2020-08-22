@@ -5,12 +5,13 @@
 <a name="v0.0.4"></a>
 ## [v0.0.4] - 2020-08-22
 ### Changelog
+- [3f4c100](https://github.com/ldelossa/gcl/commit/3f4c1001982ee199e46c73eaadab80212124f6c6): compact format
 - [bd5872d](https://github.com/ldelossa/gcl/commit/bd5872d3acc4c68a988058a4e3e9cd9034dcc902): linkable sha and issues
 ### Cicd
 - [50652d2](https://github.com/ldelossa/gcl/commit/50652d2e971a489e706a990cc742d343d8456862): adds git commit template
 - [ca3642b](https://github.com/ldelossa/gcl/commit/ca3642b8d9ee9f7408e2f07c8bea6517ab9a0692): add github commit check
 ### Release
-- [632df9e](https://github.com/ldelossa/gcl/commit/632df9e4203483cd7457bbef64248a2f820eca51): release v0.0.4
+- [4fc13c9](https://github.com/ldelossa/gcl/commit/4fc13c9dfd083ad24f4205adad8e7835495d05fe): release v0.0.4
 
 <a name="v0.0.3"></a>
 ## [v0.0.3] - 2020-08-21
