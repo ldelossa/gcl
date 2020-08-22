@@ -6,8 +6,9 @@
 {{ range .Unreleased.CommitGroups -}}
 ### {{ .Title }}
 {{ range .Commits -}}
-- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ .Subject }}
-{{ end }}
+- [{{.Hash.Short}}]({{ $.Info.RepositoryURL  }}/commit/{{ .Hash.Long }}): {{ .Subject }}
+{{ if .Refs -}}{{ range .Refs }}  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }}){{ end -}}
+{{ end -}}
 {{ end -}}
 {{ end -}}
 {{ end -}}
@@ -19,12 +20,9 @@
 ### {{ .Title }}
 {{ range .Commits -}}
 - [{{.Hash.Short}}]({{ $.Info.RepositoryURL  }}/commit/{{ .Hash.Long }}): {{ .Subject }}
-{{ if .Refs -}}
-{{ range .Refs }}
-  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }})
-{{ end }}
-{{ end }}
-{{ end }}
+{{ if .Refs -}}{{ range .Refs }}  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }}){{ end -}}
+{{ end -}}
+{{ end -}}
 {{ end -}}
 
 {{- if .RevertCommits -}}
@@ -56,6 +54,7 @@
 {{ range .Versions -}}
 {{ if .Tag.Previous -}}
 [{{ .Tag.Name }}]: {{ $.Info.RepositoryURL }}/compare/{{ .Tag.Previous.Name }}...{{ .Tag.Name }}
+{{ end -}}
 {{ end -}}
 {{ end -}}
 {{ end -}}
