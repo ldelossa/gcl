@@ -37,7 +37,9 @@ jobs:
           .
       - name: ChangeLogSanityCheck
         run: |
-          echo '${{ env.CHANGELOG }}'
+          cat <<.
+          ${{ env.CHANGELOG }}
+          .
       - name: Create Release
         uses: actions/create-release@latest
         env:
