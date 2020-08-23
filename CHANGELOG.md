@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="v0.0.15"></a>
+## [v0.0.15] - 2020-08-23
+### Cidi
+- [cbdf0c5](https://github.com/ldelossa/gcl/commit/cbdf0c54f67b3fe673dacc3e7edbc1f97ff81f92): truncate git ref to just tag
+- [94491e6](https://github.com/ldelossa/gcl/commit/94491e6e94b6f968d21f9ea872924eb4e99c7470): refs/tags/v0.0.14 changelog bump
+
 <a name="v0.0.14"></a>
 ## [v0.0.14] - 2020-08-23
 ### Changelog
@@ -84,7 +90,8 @@
 ### Changelog
 - [79aaa8e](https://github.com/ldelossa/gcl/commit/79aaa8ece4f65a9e3b1bb1045684f138b8c56957): initial commit
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.14...HEAD
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.15...HEAD
+[v0.0.15]: https://github.com/ldelossa/gcl/compare/v0.0.14...v0.0.15
 [v0.0.14]: https://github.com/ldelossa/gcl/compare/v0.0.13...v0.0.14
 [v0.0.13]: https://github.com/ldelossa/gcl/compare/v0.0.12...v0.0.13
 [v0.0.12]: https://github.com/ldelossa/gcl/compare/v0.0.11...v0.0.12
