@@ -16,11 +16,14 @@ options:
   issues:
     prefix: 
       - "#"
+
   refs:
     actions:
       - Closes
       - Fixes
+      - PullRequest
+
   notes:
     keywords:
       - BREAKING CHANGE
-      - Note
+      - NOTE

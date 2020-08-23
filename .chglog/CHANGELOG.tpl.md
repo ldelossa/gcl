@@ -7,7 +7,7 @@
 ### {{ .Title }}
 {{ range .Commits -}}
 - [{{.Hash.Short}}]({{ $.Info.RepositoryURL  }}/commit/{{ .Hash.Long }}): {{ .Subject }}
-{{ if .Refs -}}{{ range .Refs }}  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }}){{ end }}
+{{ if .Refs -}}{{ range .Refs }} -{{if .Action}}{{ .Action }} {{ end }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }}){{ end -}}
 {{ end -}}
 {{ end -}}
 {{ end -}}
@@ -20,7 +20,7 @@
 ### {{ .Title }}
 {{ range .Commits -}}
 - [{{.Hash.Short}}]({{ $.Info.RepositoryURL  }}/commit/{{ .Hash.Long }}): {{ .Subject }}
-{{ if .Refs -}}{{ range .Refs }}  - {{ .Action }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }}){{ end }}
+{{ if .Refs -}}{{ range .Refs }} - {{if .Action}}{{ .Action }}{{ end }} [#{{ .Ref }}]({{ $.Info.RepositoryURL  }}/issues/{{ .Ref }}){{ end -}}
 {{ end -}}
 {{ end -}}
 {{ end -}}
