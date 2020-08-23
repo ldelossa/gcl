@@ -27,6 +27,7 @@ jobs:
           commit-message: "cidi: ${{ github.ref }} changelog bump"
           branch: "${{github.ref}}-changelog-bump"
           signoff: "gh-actions"
+          base: "master"
 
 
           
