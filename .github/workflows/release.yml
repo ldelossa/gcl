@@ -9,32 +9,8 @@ jobs:
   changelog-bump-pr:
     runs-on: 'ubuntu-latest'
     steps:
+      # Build stuff happens here.
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
           ref: master
-      - name: SetupTag
-        run: |
-          tag=$(basename ${{ github.ref }})
-          cat <<.
-          ::set-env name=VERSION::${tag}
-          .
-      - name: ChangeLogBump
-        shell: bash
-        run: |
-          curl -o git-chglog -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64
-          chmod u+x git-chglog
-          ./git-chglog -o CHANGELOG.md
-          rm -rf git-chglog
-      - name: PullRequest
-        uses: peter-evans/create-pull-request@v3.1.2
-        with:
-          title: "${{ env.VERSION }} Changelog Bump"
-          body: "This is an automated change log bump following a release."
-          commit-message: "cidi: ${{ github.ref }} changelog bump"
-          branch: "${{ env.VERSION }}-changelog-bump"
-          signoff: "gh-actions"
-
-
-          
