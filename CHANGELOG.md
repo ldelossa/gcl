@@ -2,6 +2,13 @@
 ## [Unreleased]
 
 
+<a name="v0.0.16"></a>
+## [v0.0.16] - 2020-08-24
+### Automated-Release
+- [910ae59](https://github.com/ldelossa/gcl/commit/910ae5910ff69974924a8c173f7f632004a1c83e): add bogus commit for demo
+### Cidi
+- [5f65479](https://github.com/ldelossa/gcl/commit/5f654797e343807507212e6ff5d946114d066cd5): refs/tags/v0.0.15 changelog bump
+
 <a name="v0.0.15"></a>
 ## [v0.0.15] - 2020-08-23
 ### Cidi
@@ -90,7 +97,8 @@
 ### Changelog
 - [79aaa8e](https://github.com/ldelossa/gcl/commit/79aaa8ece4f65a9e3b1bb1045684f138b8c56957): initial commit
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.15...HEAD
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.16...HEAD
+[v0.0.16]: https://github.com/ldelossa/gcl/compare/v0.0.15...v0.0.16
 [v0.0.15]: https://github.com/ldelossa/gcl/compare/v0.0.14...v0.0.15
 [v0.0.14]: https://github.com/ldelossa/gcl/compare/v0.0.13...v0.0.14
 [v0.0.13]: https://github.com/ldelossa/gcl/compare/v0.0.12...v0.0.13
