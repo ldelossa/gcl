@@ -36,4 +36,5 @@ jobs:
           body: "This is an automated changelog commit."
           commit-message: "chore: ${{ env.NEXT_VERSION }} changelog bump"
           branch: "ready-${{ env.NEXT_VERSION }}"
+          ref: master
           signoff: "gh-actions"
