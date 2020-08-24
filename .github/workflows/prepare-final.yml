@@ -1,0 +1,39 @@
+---
+name: Prepare For Final
+
+on:
+  push:
+    tags:
+      - v0.*.rc*
+
+jobs:
+  create:
+    name: Prepare Final
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: SetupTag
+        run: |
+          : "${tag:=${GITHUB_REF#refs/tags/}}"
+          cat <<.
+          ::set-env name=VERSION::${tag}
+          ::set-env name=NEXT_VERSION::${tag%.rc*}
+          .
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: ChangeLog
+        shell: bash
+        run: |
+          curl -o /tmp/git-chglog -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64
+          chmod u+x /tmp/git-chglog
+          echo "creating change log for tag: ${NEXT_VERSION}"
+          /tmp/git-chglog --next-tag "${NEXT_VERSION}" -o CHANGELOG.md
+      - name: PullRequest
+        uses: peter-evans/create-pull-request@v3.1.2
+        with:
+          title: "${{ env.NEXT_VERSION }} Changelog Bump"
+          body: "This is an automated changelog commit."
+          commit-message: "chore: ${{ env.NEXT_VERSION }} changelog bump"
+          branch: "ready-${{ env.NEXT_VERSION }}"
+          signoff: "gh-actions"
