@@ -46,7 +46,8 @@ jobs:
           commit-message: "chore: ${{ env.VERSION }} changelog bump"
           branch: "ready-${{ env.VERSION }}"
           signoff: "gh-actions"
+      # add any artifact building/shipping to QE for testing
       - name: QE Artifacts
         run: |
-          performing qe artifacts deploy
+          echo "performing qe artifacts deploy"
 
