@@ -1,5 +1,9 @@
 ---
 name: Prepare Release
+# On every new relese tag, this workflow creates a release.
+#
+# For alpha and beta prerelease versions, the release is created as a draft.
+# For release candiate and release versions, the release is not a draft.
 
 on:
   push:
@@ -49,5 +53,5 @@ jobs:
           release_name: ${{ env.VERSION}} Release
           body: |
             ${{ env.CHANGELOG }}
-          draft: true
+          draft: ${{ contains(env.VERSION, 'alpha') || contains(env.VERSION, 'beta') }}
           prerelease: ${{ contains(env.VERSION, 'alpha') || contains(env.VERSION, 'beta') || contains(env.VERSION, 'rc') }}

@@ -1,5 +1,9 @@
 ---
 name: Release Actions
+# This action happens whenever a release is published.
+#
+# Because of the prepare-release workflow, this is triggered automatically
+# on release candidate and release tags.
 
 on:
   release:
@@ -12,5 +16,3 @@ jobs:
       # Build stuff happens here.
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: master
