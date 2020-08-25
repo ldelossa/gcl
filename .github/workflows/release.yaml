@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Setup
         run: |
-          tag=`basename github.ref`
+          tag=`basename ${{ github.ref }}`
           echo $tag | grep -E "alpha|beta|rc"
           is_prod_releaes = $?
           cat <<.
