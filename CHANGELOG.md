@@ -2,10 +2,17 @@
 ## [Unreleased]
 
 
+<a name="v0.0.21"></a>
+## [v0.0.21] - 2020-08-25
+### Automated-Release
+- [b508373](https://github.com/ldelossa/gcl/commit/b508373f1d8b43538ce36af8bdd293275ca99a97): remove prepare tag in prod release
+
 <a name="v0.0.20"></a>
 ## [v0.0.20] - 2020-08-25
 ### Automated-Release
 - [f625e43](https://github.com/ldelossa/gcl/commit/f625e432518c40b6f0ab248d27ca585b1ceef2b6): commit prepare tag
+### Chore
+- [e25fdeb](https://github.com/ldelossa/gcl/commit/e25fdeb8398f3a699a0a5818656daeff5f18086b): v0.0.20 changelog bump
 
 <a name="prepare-v0.0.19"></a>
 ## [prepare-v0.0.19] - 2020-08-25
@@ -159,7 +166,8 @@
 ### Changelog
 - [79aaa8e](https://github.com/ldelossa/gcl/commit/79aaa8ece4f65a9e3b1bb1045684f138b8c56957): initial commit
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.20...HEAD
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.21...HEAD
+[v0.0.21]: https://github.com/ldelossa/gcl/compare/v0.0.20...v0.0.21
 [v0.0.20]: https://github.com/ldelossa/gcl/compare/prepare-v0.0.19...v0.0.20
 [prepare-v0.0.19]: https://github.com/ldelossa/gcl/compare/v0.0.18...prepare-v0.0.19
 [v0.0.18]: https://github.com/ldelossa/gcl/compare/prepare-v0.0.18...v0.0.18
