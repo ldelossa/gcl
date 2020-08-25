@@ -41,7 +41,7 @@ jobs:
           branch: "ready-${{ env.VERSION }}"
           signoff: "gh-actions"
       - name: QE Artifacts
-        if: {{ env.PROD_RELEASE }}
+        if: ${{ env.PROD_RELEASE }}
         run: |
           performing production release tasks
 
