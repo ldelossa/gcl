@@ -18,8 +18,9 @@ jobs:
         shell: bash
         run: |
           tag=$(basename ${{ github.ref }})
+          next=$(echo ${tag//prepare-})
           cat <<.
-          ::set-env name=VERSION::${tag}
+          ::set-env name=VERSION::${next}
           .
       - name: Checkout
         uses: actions/checkout@v2
