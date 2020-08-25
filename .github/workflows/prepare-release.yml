@@ -1,57 +1,47 @@
 ---
 name: Prepare Release
-# On every new relese tag, this workflow creates a release.
-#
-# For alpha and beta prerelease versions, the release is created as a draft.
-# For release candiate and release versions, the release is not a draft.
+# Prepare Release looks for a tag with a "prepare" prefix.
+# If encountered an automated changelog pull request will be opened against the repository.
+# If the tag does not contain alpha, beta, or rc test artifacts will be created for QE testing.
 
 on:
   push:
     tags:
-      - v0.*
+      - prepare-*
 
 jobs:
-  create:
-    name: Create Release
+  prepare:
+    name: Prepare Release
     runs-on: 'ubuntu-latest'
     steps:
-      - name: SetupTag
+      - name: Setup
         run: |
-          : "${tag:=${GITHUB_REF#refs/tags/}}"
+          tag=`basename github.ref`
+          echo $tag | grep -E "alpha|beta|rc"
+          is_prod_releaes = $?
           cat <<.
           ::set-env name=VERSION::${tag}
+          ::set-env name=PROD_RELEASE::%{is_prod_release}
           .
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: ChangeLog
-        shell: bash
+      - name: Fix Checkout
+        # A tag that triggers this workflow should only exist on one branch,
+        # near or at the head of it.
         run: |
-          curl -o git-chglog -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64
-          chmod u+x git-chglog
-          tag=`basename ${{ github.ref }}`
-          echo "creating change log for tag: $tag"
-          chglog="$(./git-chglog ${tag})"
-          chglog="${chglog//'%'/'%25'}"
-          chglog="${chglog//$'\n'/'%0A'}"
-          chglog="${chglog//$'\r'/'%0D'}"
-          cat <<.
-          ::set-env name=CHANGELOG::${chglog}
-          .
-      - name: ChangeLogSanityCheck
-        run: |
-          cat <<.
-          ${{ env.CHANGELOG }}
-          .
-      - name: Create Release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git checkout "$(git branch --remote --contains "${GITHUB_REF}" | awk '$0!~/detached/{sub(/.+\//,"",$NF);print $NF;exit}')"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3.1.2
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ env.VERSION}} Release
-          body: |
-            ${{ env.CHANGELOG }}
-          draft: ${{ contains(env.VERSION, 'alpha') || contains(env.VERSION, 'beta') }}
-          prerelease: ${{ contains(env.VERSION, 'alpha') || contains(env.VERSION, 'beta') || contains(env.VERSION, 'rc') }}
+          title: "${{ env.VERSION }} Changelog Bump"
+          body: "This is an automated changelog commit."
+          commit-message: "chore: ${{ env.VERSION }} changelog bump"
+          branch: "ready-${{ env.VERSION }}"
+          signoff: "gh-actions"
+      - name: QE Artifacts
+        if: {{ env.PROD_RELEASE }}
+        run: |
+          performing production release tasks
+
