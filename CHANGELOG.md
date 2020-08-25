@@ -2,6 +2,44 @@
 ## [Unreleased]
 
 
+<a name="v0.0.17"></a>
+## [v0.0.17] - 0001-01-01
+
+<a name="v0.0.17-rc7"></a>
+## [v0.0.17-rc7] - 2020-08-25
+### Ci
+- [d23d38e](https://github.com/ldelossa/gcl/commit/d23d38e0e83223e3360a96fd45b5df6acc1474c4): attempt to fix checkout for PR
+
+<a name="v0.0.17-rc6"></a>
+## [v0.0.17-rc6] - 2020-08-25
+### Ci
+- [f5adc4b](https://github.com/ldelossa/gcl/commit/f5adc4b85dc14ecc0f0ffeed47022ad5beec067c): attempt to fix checkout for PR
+
+<a name="v0.0.17-rc5"></a>
+## [v0.0.17-rc5] - 2020-08-25
+### Ci
+- [228c9d0](https://github.com/ldelossa/gcl/commit/228c9d0a072f29d65b0a8a52dd16cf1bfd8b026b): attempt to fix checkout for PR
+
+<a name="v0.0.17-rc4"></a>
+## [v0.0.17-rc4] - 2020-08-25
+### Ci
+- [a9febbe](https://github.com/ldelossa/gcl/commit/a9febbedabc90211a8bea7641a7cadeef015e9f4): attempt to fix checkout for PR
+
+<a name="v0.0.17.rc3"></a>
+## [v0.0.17.rc3] - 2020-08-24
+### Ci
+- [b89ea61](https://github.com/ldelossa/gcl/commit/b89ea6168768a1775fe1500bee00b9dc4e9ef5d5): fix automatic PR target
+
+<a name="v0.0.17.rc2"></a>
+## [v0.0.17.rc2] - 2020-08-24
+### Ci
+- [c9e6198](https://github.com/ldelossa/gcl/commit/c9e6198b3bcbce0b469c956ebaab01db176bf20e): fix automatic PR target
+
+<a name="v0.0.17.rc1"></a>
+## [v0.0.17.rc1] - 2020-08-24
+### Cidi
+- [2934bc5](https://github.com/ldelossa/gcl/commit/2934bc5185a8152d65ae5bba2b0cf9959678e787): refs/tags/v0.0.16 changelog bump
+
 <a name="v0.0.16"></a>
 ## [v0.0.16] - 2020-08-24
 ### Automated-Release
@@ -97,7 +135,15 @@
 ### Changelog
 - [79aaa8e](https://github.com/ldelossa/gcl/commit/79aaa8ece4f65a9e3b1bb1045684f138b8c56957): initial commit
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.16...HEAD
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.17...HEAD
+[v0.0.17]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc7...v0.0.17
+[v0.0.17-rc7]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc6...v0.0.17-rc7
+[v0.0.17-rc6]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc5...v0.0.17-rc6
+[v0.0.17-rc5]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc4...v0.0.17-rc5
+[v0.0.17-rc4]: https://github.com/ldelossa/gcl/compare/v0.0.17.rc3...v0.0.17-rc4
+[v0.0.17.rc3]: https://github.com/ldelossa/gcl/compare/v0.0.17.rc2...v0.0.17.rc3
+[v0.0.17.rc2]: https://github.com/ldelossa/gcl/compare/v0.0.17.rc1...v0.0.17.rc2
+[v0.0.17.rc1]: https://github.com/ldelossa/gcl/compare/v0.0.16...v0.0.17.rc1
 [v0.0.16]: https://github.com/ldelossa/gcl/compare/v0.0.15...v0.0.16
 [v0.0.15]: https://github.com/ldelossa/gcl/compare/v0.0.14...v0.0.15
 [v0.0.14]: https://github.com/ldelossa/gcl/compare/v0.0.13...v0.0.14
