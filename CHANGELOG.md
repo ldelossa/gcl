@@ -2,10 +2,17 @@
 ## [Unreleased]
 
 
+<a name="v0.0.23-alpha"></a>
+## [v0.0.23-alpha] - 2020-08-25
+### Automated-Release
+- [2d278fd](https://github.com/ldelossa/gcl/commit/2d278fdbdf380e101bde77f7994cfe1e8533649c): test alpha build
+
 <a name="v0.0.22"></a>
 ## [v0.0.22] - 2020-08-25
 ### Automated-Release
 - [01cfa47](https://github.com/ldelossa/gcl/commit/01cfa4701b948adb943eaef7e842daeba55882a5): place tag deletion in correct spot
+### Chore
+- [154e662](https://github.com/ldelossa/gcl/commit/154e662c91823188749dd5aac462f37cf8e0e3cc): v0.0.22 changelog bump
 
 <a name="v0.0.21"></a>
 ## [v0.0.21] - 2020-08-25
@@ -173,7 +180,8 @@
 ### Changelog
 - [79aaa8e](https://github.com/ldelossa/gcl/commit/79aaa8ece4f65a9e3b1bb1045684f138b8c56957): initial commit
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.22...HEAD
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.23-alpha...HEAD
+[v0.0.23-alpha]: https://github.com/ldelossa/gcl/compare/v0.0.22...v0.0.23-alpha
 [v0.0.22]: https://github.com/ldelossa/gcl/compare/v0.0.21...v0.0.22
 [v0.0.21]: https://github.com/ldelossa/gcl/compare/v0.0.20...v0.0.21
 [v0.0.20]: https://github.com/ldelossa/gcl/compare/prepare-v0.0.19...v0.0.20
