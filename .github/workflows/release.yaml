@@ -27,6 +27,9 @@ jobs:
       - name: ChangeLog
         shell: bash
         run: |
+          # sanity check, if prepare tag exists delete it
+          git tag --delete prepare-$tag || true
+
           curl -o git-chglog -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64
           chmod u+x git-chglog
           tag=`basename ${{ github.ref }}`
