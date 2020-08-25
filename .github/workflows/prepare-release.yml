@@ -15,8 +15,9 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: Setup
+        shell: bash
         run: |
-          tag=`basename ${{ github.ref }}`
+          tag=$(basename ${{ github.ref }})
           echo $tag | grep -E "alpha|beta|rc"
           is_prod_releaes = $?
           cat <<.
