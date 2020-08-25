@@ -28,7 +28,7 @@ jobs:
         # A tag that triggers this workflow should only exist on one branch,
         # near or at the head of it.
         run: |
-          git checkout "$(git branch --contains "${GITHUB_REF}" | awk '$0!~/detached/{print $NF; exit}')"
+          git checkout "$(git branch --remote --contains "${GITHUB_REF}" | awk '$0!~/detached/{sub(/.+\//,"",$NF);print $NF;exit}')"
       - name: Changelog
         shell: bash
         run: |
