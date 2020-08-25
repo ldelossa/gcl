@@ -2,8 +2,18 @@
 ## [Unreleased]
 
 
+<a name="v0.0.19"></a>
+## [v0.0.19] - 2020-08-25
+### Automated-Release
+- [dd1c756](https://github.com/ldelossa/gcl/commit/dd1c756a59f25836e0dd7d26e119c8281df33ea9): fix production release
+
 <a name="v0.0.18"></a>
 ## [v0.0.18] - 2020-08-25
+### Chore
+- [6f88908](https://github.com/ldelossa/gcl/commit/6f889086e72e14d8c75e0cdf44d4a299d726c45a): v0.0.18 changelog bump
+
+<a name="prepare-v0.0.18"></a>
+## [prepare-v0.0.18] - 2020-08-25
 ### Automated-Release
 - [ceb9758](https://github.com/ldelossa/gcl/commit/ceb9758da8734d820bf579bf6ec534aa366f4e93): delete prepare tag before changelog gen
 - [43ca3a7](https://github.com/ldelossa/gcl/commit/43ca3a7074e45bdfac1e32ecfa04acc4a3bb0dcc): fix qe release echo
@@ -144,8 +154,10 @@
 ### Changelog
 - [79aaa8e](https://github.com/ldelossa/gcl/commit/79aaa8ece4f65a9e3b1bb1045684f138b8c56957): initial commit
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.18...HEAD
-[v0.0.18]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc7...v0.0.18
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.19...HEAD
+[v0.0.19]: https://github.com/ldelossa/gcl/compare/v0.0.18...v0.0.19
+[v0.0.18]: https://github.com/ldelossa/gcl/compare/prepare-v0.0.18...v0.0.18
+[prepare-v0.0.18]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc7...prepare-v0.0.18
 [v0.0.17-rc7]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc6...v0.0.17-rc7
 [v0.0.17-rc6]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc5...v0.0.17-rc6
 [v0.0.17-rc5]: https://github.com/ldelossa/gcl/compare/v0.0.17-rc4...v0.0.17-rc5
