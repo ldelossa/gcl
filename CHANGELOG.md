@@ -2,10 +2,17 @@
 ## [Unreleased]
 
 
+<a name="v0.0.25-branch-deploy"></a>
+## [v0.0.25-branch-deploy] - 2020-08-26
+### Release-Automation
+- [28715ed](https://github.com/ldelossa/gcl/commit/28715ed5db67e8c50f1175cd51e8069a7c85614b): commit to test deploy from branch
+
 <a name="v0.0.24"></a>
 ## [v0.0.24] - 2020-08-26
 ### Automated-Release
 - [ef4b531](https://github.com/ldelossa/gcl/commit/ef4b5311105df5a5a72a62fd3703066810a73c0a): try dispatch driven prepare
+### Chore
+- [e275cdb](https://github.com/ldelossa/gcl/commit/e275cdb94634c1c8e0a7951b24c68ec9ea540c18): v0.0.24 changelog bump
 ### Release-Automation
 - [5afae09](https://github.com/ldelossa/gcl/commit/5afae09b1ad0c459f68bbd7e8e40f1ecdf0315d0): do not try to delete tags anymore
 
@@ -189,7 +196,8 @@
 ### Changelog
 - [79aaa8e](https://github.com/ldelossa/gcl/commit/79aaa8ece4f65a9e3b1bb1045684f138b8c56957): initial commit
 
-[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.24...HEAD
+[Unreleased]: https://github.com/ldelossa/gcl/compare/v0.0.25-branch-deploy...HEAD
+[v0.0.25-branch-deploy]: https://github.com/ldelossa/gcl/compare/v0.0.24...v0.0.25-branch-deploy
 [v0.0.24]: https://github.com/ldelossa/gcl/compare/v0.0.23-alpha...v0.0.24
 [v0.0.23-alpha]: https://github.com/ldelossa/gcl/compare/v0.0.22...v0.0.23-alpha
 [v0.0.22]: https://github.com/ldelossa/gcl/compare/v0.0.21...v0.0.22
