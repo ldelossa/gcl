@@ -5,49 +5,42 @@ name: Prepare Release
 # If the tag does not contain alpha, beta, or rc test artifacts will be created for QE testing.
 
 on:
-  push:
-    tags:
-      - prepare-*
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'the branch to prepare the release against'
+        required: true
+        deault: 'master'
+      tag:
+        description: 'the tag to be released'
+        required: true
 
 jobs:
   prepare:
     name: Prepare Release
     runs-on: 'ubuntu-latest'
     steps:
-      - name: Setup
-        shell: bash
-        run: |
-          tag=$(basename ${{ github.ref }})
-          next=$(echo ${tag//prepare-})
-          cat <<.
-          ::set-env name=TAG::${tag}
-          ::set-env name=VERSION::${next}
-          .
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Fix Checkout
-        # A tag that triggers this workflow should only exist on one branch,
-        # near or at the head of it.
-        run: |
-          git checkout "$(git branch --remote --contains "${GITHUB_REF}" | awk '$0!~/detached/{sub(/.+\//,"",$NF);print $NF;exit}')"
+          ref: ${{ github.event.inputs.branch }}
       - name: Changelog
         shell: bash
         run: |
-          git tag --delete ${{ env.TAG }}
-          git push --delete origin ${{ env.TAG }}
+          git tag --delete ${{ github.event.inputs.tag }}
+          git push --delete origin ${{ github.event.inputs.tag }}
           curl -o /tmp/git-chglog -L https://github.com/git-chglog/git-chglog/releases/download/0.9.1/git-chglog_linux_amd64
           chmod u+x /tmp/git-chglog
-          echo "creating change log for tag: ${{ env.VERSION }}"
-          /tmp/git-chglog --next-tag "${{ env.VERSION }}" -o CHANGELOG.md
+          echo "creating change log for tag: ${{ github.event.inputs.tag }}"
+          /tmp/git-chglog --next-tag "${{ github.event.inputs.tag }}" -o CHANGELOG.md
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.1.2
         with:
-          title: "${{ env.VERSION }} Changelog Bump"
+          title: "${{ github.event.inputs.tag }} Changelog Bump"
           body: "This is an automated changelog commit."
-          commit-message: "chore: ${{ env.VERSION }} changelog bump"
-          branch: "ready-${{ env.VERSION }}"
+          commit-message: "chore: ${{ github.event.inputs.tag }} changelog bump"
+          branch: "ready-${{ github.event.inputs.tag }}"
           signoff: "gh-actions"
       # add any artifact building/shipping to QE for testing
       - name: QE Artifacts
